@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Un regalito de amor solo para ti">
+    <meta name="theme-color" content="#0a0a12">
+    <title>Para ti, My Love ❤️</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Fondo rosa inicial -->
+    <div class="fondo" id="fondo">
+        <div class="estrella" style="--d:0s; --x:12%; --y:18%; --s:1.6">✨</div>
+        <div class="estrella" style="--d:1.2s; --x:78%; --y:12%; --s:1.3">⭐</div>
+        <div class="estrella" style="--d:0.6s; --x:22%; --y:72%; --s:1.1">💫</div>
+        <div class="estrella" style="--d:2.1s; --x:85%; --y:68%; --s:1.5">✨</div>
+        <div class="estrella" style="--d:1.8s; --x:8%; --y:45%; --s:1.2">⭐</div>
+        <div class="estrella" style="--d:0.9s; --x:65%; --y:82%; --s:1.4">💫</div>
+        <div class="estrella" style="--d:2.5s; --x:45%; --y:8%; --s:1.0">✨</div>
+        <div class="estrella" style="--d:1.5s; --x:92%; --y:35%; --s:1.3">⭐</div>
+    </div>
+
+    <div class="particulas" id="particulas"></div>
+
+    <!-- ============ VENTANA 1 ============ -->
+    <section class="carta activa" id="ventana1" role="dialog" aria-labelledby="titulo1">
+        <div class="carta-inner">
+            <p class="saludo-pequeno">Hey tú...</p>
+            <h1 class="titulo" id="titulo1">
+                <span class="linea blanco">Hello</span>
+                <span class="linea rojo">My Love</span>
+            </h1>
+            <p class="subtitulo">¿Me amas?</p>
+            <div class="botones">
+                <button class="btn btn-si" data-action="amor">
+                    <span class="btn-icon">❤️</span> Te amo
+                </button>
+                <button class="btn btn-no" id="btnNo1">No te amo</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ VENTANA 2 ============ -->
+    <section class="carta oculta" id="ventana2" role="dialog" aria-labelledby="titulo2">
+        <div class="carta-inner">
+            <h1 class="titulo pregunta" id="titulo2">¿Segura?</h1>
+            <p class="subtitulo">Piénsalo bien... 🥺</p>
+            <div class="botones">
+                <button class="btn btn-si" data-action="amor">
+                    <span class="btn-icon">💕</span> No, yo te amo mucho
+                </button>
+                <button class="btn btn-no" id="btnNo2">Sí, no te amo</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ VENTANA 3 ============ -->
+    <section class="carta oculta" id="ventana3" role="dialog" aria-labelledby="titulo3">
+        <div class="carta-inner">
+            <h1 class="titulo pregunta" id="titulo3">No me importa...<br>¡me amarás! :v</h1>
+            <p class="subtitulo">Última oportunidad 😏</p>
+            <div class="botones" id="zonaBotones3">
+                <button class="btn btn-si" data-action="amor">
+                    <span class="btn-icon">💗</span> Me arrepentí, sí te amo
+                </button>
+                <button class="btn btn-escapa" id="btnEscapa" type="button">
+                    <div class="viento" id="viento">
+                        <span class="linea-viento"></span>
+                        <span class="linea-viento"></span>
+                        <span class="linea-viento"></span>
+                    </div>
+                    <div class="ojos" id="ojos">
+                        <div class="ojo"><div class="pupila"></div></div>
+                        <div class="ojo"><div class="pupila"></div></div>
+                    </div>
+                    <span class="texto-btn">Estoy segura, no te amo</span>
+                    <div class="patitas" id="patitas">
+                        <div class="pierna izq"></div>
+                        <div class="pierna der"></div>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ ESCENA DEL ESPACIO ============ -->
+    <div id="espacio" class="espacio oculta" aria-hidden="true">
+        <!-- Capas de zoom / motion blur -->
+        <div class="zoom-capa" id="zoomCapa">
+            <canvas id="canvasEspacio"></canvas>
+        </div>
+
+        <!-- Planetas interactivos (se posicionan por JS) -->
+        <div id="planetasLayer" class="planetas-layer"></div>
+
+        <!-- Tooltip flotante -->
+        <div id="tooltip" class="tooltip oculta" role="tooltip">
+            <p class="tooltip-texto" id="tooltipTexto"></p>
+            <button class="btn-leer" id="btnLeer" type="button">
+                <span class="brillo"></span>
+                <span class="btn-leer-texto">Leer</span>
+            </button>
+        </div>
+
+        <!-- Indicación suave al llegar -->
+        <p class="hint-espacio" id="hintEspacio">Explora nuestra galaxia ✨</p>
+    </div>
+
+    <canvas id="confetti" aria-hidden="true"></canvas>
+
+    <script src="script.js"></script>
+</body>
+</html>
